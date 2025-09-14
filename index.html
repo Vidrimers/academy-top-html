@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Callium - продажа дизайнерской мебели" />
+    <title>vite+exam+scss</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <script type="module" crossorigin src="/assets/index.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index.css">
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="page-header__wrapper container">
+        <div class="page-header__logo">
+          <img src="/assets/logo.svg" width="20" height="20" alt="Логотип Callium" />
+        </div>
+        <nav class="site-nav site-nav--closed site-nav--no-js page-header__site-nav">
+          <ul class="site-nav__list">
+            <li class="site-nav__item"><a href="#">Мебель</a></li>
+            <li class="site-nav__item"><a href="#">Освещение</a></li>
+            <li class="site-nav__item"><a href="#">Текстиль</a></li>
+          </ul>
+          <button class="site-nav__button" type="button" aria-label="Показать/Скрыть меню"></button>
+        </nav>
+        <ul class="user-nav page-header__user-nav">
+          <li class="user-nav__item user-nav__item--search">
+            <a href="#" aria-label="Поиск по сайту"
+              ><span class="visually-hidden">Поиск по сайту</span
+              ><svg width="24" height="27" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M23.7131 24.8236L18.017 19.029C19.8744 17.0765 21.0508 14.4312 21.0508 11.4709C21.0508 5.55037 16.3453 0.76355 10.5254 0.76355C4.70548 0.76355 0 5.55037 0 11.4709C0 17.3915 4.70548 22.1783 10.5254 22.1783C12.7543 22.1783 14.8594 21.4225 16.593 20.2257L22.4129 26.1463C22.5987 26.3352 22.8463 26.3982 23.094 26.3982C23.3416 26.3982 23.5893 26.3352 23.775 26.1463C24.0846 25.7684 24.0846 25.2015 23.7131 24.8236ZM1.85742 11.4709C1.85742 6.62111 5.75802 2.65308 10.5254 2.65308C15.2928 2.65308 19.1934 6.62111 19.1934 11.4709C19.1934 16.3207 15.2928 20.2887 10.5254 20.2887C5.75802 20.2887 1.85742 16.3207 1.85742 11.4709Z"
+                  fill="#313133"
+                /></svg
+            ></a>
+          </li>
+          <li class="user-nav__item user-nav__item--cart">
+            <a href="#" aria-label="Корзина"
+              ><span class="visually-hidden">Корзина</span
+              ><svg width="33" height="28" viewBox="0 0 33 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1.70156 8.98752C1.70821 8.85446 1.81803 8.75 1.95125 8.75H21.0487C21.182 8.75 21.2918 8.85446 21.2984 8.98751L22.1984 26.9875C22.2056 27.1303 22.0917 27.25 21.9488 27.25H1.05125C0.908275 27.25 0.794421 27.1303 0.801561 26.9875L1.70156 8.98752Z"
+                  stroke="#313133"
+                  stroke-width="1.5"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16.4664 12C16.4894 11.5233 16.5 11.023 16.5 10.5C16.5 7.91305 16.2196 5.8705 15.4677 4.50676C15.1108 3.85955 14.6568 3.38328 14.071 3.05707C13.4773 2.72643 12.6577 2.5 11.5 2.5C10.3423 2.5 9.52274 2.72643 8.92899 3.05707C8.34317 3.38328 7.88917 3.85955 7.53231 4.50676C6.78036 5.8705 6.5 7.91305 6.5 10.5C6.5 11.0225 6.50018 11.522 6.50614 12H5.00598C5 11.5114 5 11.0104 5 10.5C5 5.25329 6.08333 1 11.5 1C16.9167 1 18 5.25329 18 10.5C18 11.0104 17.9905 11.5114 17.9684 12H16.4664Z"
+                  fill="#313133"
+                />
+                <circle cx="24" cy="9" r="9" fill="#313133" />
+                <!-- <path -->
+                d="M23.556 8.08H23.928C24.168 8.08 24.4 8.06 24.624 8.02C24.856 7.972 25.06 7.896 25.236 7.792C25.412
+                7.68 25.552 7.532 25.656 7.348C25.768 7.164 25.824 6.936 25.824 6.664C25.824 6.448 25.784 6.256 25.704
+                6.088C25.624 5.912 25.512 5.764 25.368 5.644C25.232 5.524 25.072 5.432 24.888 5.368C24.712 5.296 24.524
+                5.26 24.324 5.26C23.964 5.26 23.656 5.352 23.4 5.536C23.152 5.72 22.964 5.976 22.836 6.304L21.78
+                5.932C21.988 5.42 22.32 5.02 22.776 4.732C23.24 4.436 23.772 4.288 24.372 4.288C24.724 4.288 25.056 4.34
+                25.368 4.444C25.688 4.54 25.968 4.684 26.208 4.876C26.448 5.068 26.636 5.308 26.772 5.596C26.916 5.884
+                26.988 6.216 26.988 6.592C26.988 6.832 26.948 7.056 26.868 7.264C26.796 7.472 26.692 7.66 26.556
+                7.828C26.428 7.996 26.272 8.14 26.088 8.26C25.904 8.38 25.704 8.468 25.488 8.524V8.548C25.736 8.596
+                25.964 8.68 26.172 8.8C26.388 8.92 26.572 9.072 26.724 9.256C26.876 9.432 26.996 9.636 27.084
+                9.868C27.172 10.1 27.216 10.352 27.216 10.624C27.216 11.048 27.136 11.424 26.976 11.752C26.816 12.072
+                26.604 12.34 26.34 12.556C26.076 12.772 25.772 12.936 25.428 13.048C25.084 13.16 24.732 13.216 24.372
+                13.216C23.7 13.216 23.108 13.064 22.596 12.76C22.084 12.456 21.712 11.984 21.48 11.344L22.56
+                10.984C22.688 11.352 22.904 11.652 23.208 11.884C23.52 12.116 23.9 12.232 24.348 12.232C24.564 12.232
+                24.772 12.2 24.972 12.136C25.18 12.064 25.364 11.96 25.524 11.824C25.684 11.688 25.812 11.52 25.908
+                11.32C26.004 11.12 26.052 10.884 26.052 10.612C26.052 10.316 25.988 10.068 25.86 9.868C25.732 9.668
+                25.564 9.508 25.356 9.388C25.156 9.26 24.928 9.172 24.672 9.124C24.416 9.068 24.164 9.04 23.916
+                9.04H23.556V8.08Z" fill="white" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="page-main">
+      <h1 class="main-title title">Дизайнерская мебель "Callium"</h1>
+      <section class="main-screen container">
+        <div class="swiper-container main-screen__slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="product product--slider">
+                <div class="product__info">
+                  <h2 class="title">Дизайнерская мебель</h2>
+                  <h3>Кресло "Антиква"</h3>
+                  <p><span>$380</span>$240</p>
+                  <button class="product__button" type="button">Купить</button>
+                </div>
+                <div class="product__image">
+                  <img src="/assets/main-chair-desktop@2x.jpg" width="532" height="751" alt="Кресло Антиква" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product product--slider">
+                <div class="product__info">
+                  <h2 class="title">Дизайнерская мебель</h2>
+                  <h3>Кресло "Антиква"</h3>
+                  <p><span>$380</span>$240</p>
+                  <button class="product__button" type="button">Купить</button>
+                </div>
+                <div class="product__image">
+                  <img src="/assets/main-chair-desktop@2x.jpg" width="532" height="751" alt="Кресло Антиква" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product product--slider">
+                <div class="product__info">
+                  <h2 class="title">Дизайнерская мебель</h2>
+                  <h3>Кресло "Антиква"</h3>
+                  <p><span>$380</span>$240</p>
+                  <button class="product__button" type="button">Купить</button>
+                </div>
+                <div class="product__image">
+                  <img src="/assets/main-chair-desktop@2x.jpg" width="532" height="751" alt="Кресло Антиква" />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="product product--slider">
+                <div class="product__info">
+                  <h2 class="title">Дизайнерская мебель</h2>
+                  <h3>Кресло "Антиква"</h3>
+                  <p><span>$380</span>$240</p>
+                  <button class="product__button" type="button">Купить</button>
+                </div>
+                <div class="product__image">
+                  <img src="/assets/main-chair-desktop@2x.jpg" width="532" height="751" alt="Кресло Антиква" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-scrollbar main-screen__slider-scrollbar"></div>
+          <div class="swiper-pagination main-screen__slider-pagination"></div>
+        </div>
+      </section>
+    </main>
+    <section class="latest">
+      <div class="container">
+        <div class="flex flex-between">
+          <div class="latest-items">
+            <h2 class="latest-title latest-item title line flex flex-center column">НОВИНКИ</h2>
+            <a href="#" class="latest-item latest-link flex column flex-be1tween align-center">
+              <img src="/assets/chair-twilight-desktop@2x.png" alt="Новинка 1" />
+              <p class="flex column align-center">
+                <span class="latest-name">Стул «Смеркается»</span><span class="latest-price">$280</span>
+              </p>
+            </a>
+            <a href="#" class="latest-item latest-link flex column flex-betwe1en align-center">
+              <img src="/assets/chandelier-desktop@2x.png" alt="Новинка 2" />
+              <p class="flex column align-center">
+                <span class="latest-name">Люстра «Облако»</span><span class="latest-price">$250</span>
+              </p>
+            </a>
+            <a href="#" class="latest-item latest-link flex column flex-betwe1en align-center">
+              <img src="/assets/table-cream-desktop@2x.png" alt="Новинка 3" />
+              <p class="flex column align-center">
+                <span class="latest-name">Стол «Крем брюле»</span><span class="latest-price">$320</span>
+              </p>
+            </a>
+          </div>
+          <a href="#" class="latest-big latest-link flex column">
+            <img src="/assets/chair-white-desktop@2x.png" alt="Новинка 4" />
+            <p class="flex column align-center">
+              <span class="latest-name">Стул офисный «Белый шоколад»</span>
+              <span class="latest-price">$120</span>
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="clients">
+      <div class="container">
+        <div class="swiper-container clients__slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="client client--slider flex column align-center">
+                <img class="client-image" src="/assets/avatar@2x.jpg" alt="Аватар клиента" />
+                <h3 class="client-name">Елена Новикова</h3>
+                <span class="client-profession">студентка</span>
+                <p class="client-review">
+                  «Хочу поделиться своими впечатлениями по использованию дивана «Бродвей», заказывала в конце 2016 года.
+                  Держится великолепно. Спасибо, большое сотрудникам этого чудесного магазина.»
+
+                  «Хочу поделиться своими впечатлениями по использованию дивана «Бродвей», заказывала в конце 2016 года.
+                  Держится великолепно. Спасибо, большое сотрудникам этого чудесного магазина.»«Хочу поделиться своими впечатлениями по использованию дивана «Бродвей», заказывала в конце 2016 года.
+                  
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client client--slider flex column align-center">
+                <img class="client-image" src="/assets/avatar@2x.jpg" alt="Аватар клиента" />
+                <h3 class="client-name">Елена Новикова</h3>
+                <span class="client-profession">студентка</span>
+                <p class="client-review">
+                  «Хочу поделиться своими впечатлениями по использованию дивана «Бродвей», заказывала в конце 2016 года.
+                  Держится великолепно. Спасибо, большое сотрудникам этого чудесного магазина.»
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client client--slider flex column align-center">
+                <img class="client-image" src="/assets/avatar@2x.jpg" alt="Аватар клиента" />
+                <h3 class="client-name">Елена Новикова</h3>
+                <span class="client-profession">студентка</span>
+                <p class="client-review">
+                  «Хочу поделиться своими впечатлениями по использованию дивана «Бродвей», заказывала в конце 2016 года.
+                  Держится великолепно. Спасибо, большое сотрудникам этого чудесного магазина.»
+                </p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="client client--slider flex column align-center">
+                <img class="client-image" src="/assets/avatar@2x.jpg" alt="Аватар клиента" />
+                <h3 class="client-name">Елена Новикова</h3>
+                <span class="client-profession">студентка</span>
+                <p class="client-review">
+                  «Хочу поделиться своими впечатлениями по использованию дивана «Бродвей», заказывала в конце 2016 года.
+                  Держится великолепно. Спасибо, большое сотрудникам этого чудесного магазина.»
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-scrollbar clients__slider-scrollbar"></div>
+          <div class="swiper-pagination clients__slider-pagination"></div>
+          <div class="clients__slider-button-prev swiper-button-prev">
+            <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M1.60999 4.41936L5.59251 8.54691M1.60999 4.41936L5.65506 0.514452M1.60999 4.41936L14.7431 4.65262"
+                stroke="#BDBDBD"
+              />
+            </svg>
+          </div>
+          <div class="clients__slider-button-next swiper-button-next">
+            <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13.381 4.41936L9.39846 8.54691M13.381 4.41936L9.33592 0.514452M13.381 4.41936L0.247869 4.65262"
+                stroke="#BDBDBD"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="products products--bg">
+      <div class="container">
+        <h2 class="products-title title line">ПОСЛЕДНИЙ ШАНС</h2>
+        <div class="products-links flex">
+          <a href="#chairs" class="products-links__item products-links__item--active" href="#">Стулья</a
+          ><a class="products-links__item" href="#sofas">Диваны</a>
+          <a class="products-links__item" href="#armchairs">Кресла</a>
+        </div>
+        <!-- СТУЛЬЯ -->
+        <div id="chairs" class="swiper-container products__slider">
+          <div class="swiper-wrapper flex">
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Стул «Карамель»</p>
+                <p>
+                  <span class="products-price">$195</span>
+                  <span class="products-price">$245</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-caramel-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Стул «Облако»</p>
+                <p class="">
+                  <span class="products-price">$200</span>
+                  <span class="products-price">$250</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-cloud-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Стул «Сова»</p>
+                <p class="">
+                  <span class="products-price">$240</span>
+                  <span class="products-price">$260</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-owl-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Стул «Мая»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$330</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-maya-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Стул «Месси»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$305</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-messi-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Стул «Карамель»</p>
+                <p class="">
+                  <span class="products-price">$195</span>
+                  <span class="products-price">$245</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-caramel-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Стул «Облако»</p>
+                <p class="">
+                  <span class="products-price">$200</span>
+                  <span class="products-price">$250</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-cloud-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Стул «Сова»</p>
+                <p class="">
+                  <span class="products-price">$240</span>
+                  <span class="products-price">$260</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-owl-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Стул «Мая»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$330</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-maya-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Стул «Месси»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$305</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-messi-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-scrollbar products__slider-scrollbar"></div>
+          <div class="swiper-pagination products__slider-pagination"></div>
+        </div>
+        <!-- СТУЛЬЯ -->
+         <!-- ДИВАНЫ -->
+          <div id="sofas" class="swiper-container products__slider">
+          <div class="swiper-wrapper flex">
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Диван «Карамель»</p>
+                <p class="">
+                  <span class="products-price">$195</span>
+                  <span class="products-price">$245</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-caramel-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Диван «Облако»</p>
+                <p class="">
+                  <span class="products-price">$200</span>
+                  <span class="products-price">$250</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-cloud-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Диван «Сова»</p>
+                <p class="">
+                  <span class="products-price">$240</span>
+                  <span class="products-price">$260</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-owl-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Диван «Мая»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$330</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-maya-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Диван «Месси»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$305</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-messi-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Диван «Карамель»</p>
+                <p class="">
+                  <span class="products-price">$195</span>
+                  <span class="products-price">$245</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-caramel-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Диван «Облако»</p>
+                <p class="">
+                  <span class="products-price">$200</span>
+                  <span class="products-price">$250</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-cloud-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Диван «Сова»</p>
+                <p class="">
+                  <span class="products-price">$240</span>
+                  <span class="products-price">$260</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-owl-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Диван «Мая»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$330</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-maya-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Диван «Месси»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$305</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-messi-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-scrollbar products__slider-scrollbar"></div>
+          <div class="swiper-pagination products__slider-pagination"></div>
+        </div>
+         <!-- ДИВАНЫ -->
+         <!-- КРЕСЛА -->
+          <div id="armchairs" class="swiper-container products__slider">
+          <div class="swiper-wrapper flex">
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Кресло «Карамель»</p>
+                <p class="">
+                  <span class="products-price">$195</span>
+                  <span class="products-price">$245</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-caramel-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Кресло «Облако»</p>
+                <p class="">
+                  <span class="products-price">$200</span>
+                  <span class="products-price">$250</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-cloud-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Кресло «Сова»</p>
+                <p class="">
+                  <span class="products-price">$240</span>
+                  <span class="products-price">$260</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-owl-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Кресло «Мая»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$330</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-maya-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Кресло «Месси»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$305</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-messi-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Кресло «Карамель»</p>
+                <p class="">
+                  <span class="products-price">$195</span>
+                  <span class="products-price">$245</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-caramel-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Кресло «Облако»</p>
+                <p class="">
+                  <span class="products-price">$200</span>
+                  <span class="products-price">$250</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-cloud-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Кресло «Сова»</p>
+                <p class="">
+                  <span class="products-price">$240</span>
+                  <span class="products-price">$260</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-owl-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Кресло «Мая»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$330</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-maya-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a href="#" class="products-item products--slider flex column">
+                <div class="wrapper">
+                  <p class="products-name">Кресло «Месси»</p>
+                <p class="">
+                  <span class="products-price">$280</span>
+                  <span class="products-price">$305</span>
+                </p>
+                </div>
+                <img class="products-image" src="/assets/chair-messi-desktop@2x.png" alt="Продукт" />
+                <button class="products-button" type="button">Купить</button>
+              </a>
+            </div>
+          </div>
+          <div class="swiper-scrollbar products__slider-scrollbar"></div>
+          <div class="swiper-pagination products__slider-pagination"></div>
+        </div>
+         <!-- КРЕСЛА -->
+      </section>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top flex flex-between align-center">
+          <div class="page-header__logo footer-logo">
+          <img src="/assets/logo.svg" width="20" height="20" alt="Логотип Callium" />
+        </div>
+    <nav class="footer-menu">
+      <ul class="footer-menu__items flex">
+        <li><a href="#">ДОСТАВКА</a></li>
+        <li><a href="#">ОПЛАТА</a></li>
+        <li><a href="#">КОНТАКТЫ</a></li>
+        <li><a href="#">ГАРАНТИИ</a></li>
+      </ul>
+    </nav>
+        </div>
+        <!-- footer-top -->
+        <div class="footer-center flex align-center">
+          <a class="phone" href="tel:+1234567890">+7(495) 205-28-14</a>
+          <a class="email" href="mailto:callium@gmail.com">callium@gmail.com</a>
+        </div>
+        <!-- footer-center -->
+        <div class="footer-bottom">
+          <div class="copyright">
+            <span>© 2018 «Callium» — Сайт по продаже дизайнерской мебели. Все права защищены.</span>
+          </div>
+        </div>
+        <!-- footer-bottom -->
+      </div>
+      </footer>
+
+  </body>
+  <!-- YAROSLAV SHIRYAKOV -->
+</html>
