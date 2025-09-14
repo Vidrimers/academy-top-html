@@ -40,12 +40,12 @@
     }
     .email {
       &::before {
-        background: url('../src/assets/icon-mail.svg') no-repeat center;
+        background: url('./../src/assets/icon-mail.svg') no-repeat center;
       }
     }
     .phone {
       &::before {
-        background: url('../src/assets/icon-phone.svg') no-repeat center;
+        background: url('./../src/assets/icon-phone.svg') no-repeat center;
       }
     }
   }
@@ -56,7 +56,7 @@
         content: '';
         display: block;
         width: 100%;
-        border-top:  1px solid rgba(0, 0, 0, 0.2);
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
         padding-top: 10px;
       }
       span {
