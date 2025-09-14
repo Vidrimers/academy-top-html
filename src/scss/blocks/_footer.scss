@@ -40,12 +40,12 @@
     }
     .email {
       &::before {
-        background: url('./../src/assets/icon-mail.svg') no-repeat center;
+        background: url('/src/assets/icon-mail.svg') no-repeat center;
       }
     }
     .phone {
       &::before {
-        background: url('./../src/assets/icon-phone.svg') no-repeat center;
+        background: url('/src/assets/icon-phone.svg') no-repeat center;
       }
     }
   }
