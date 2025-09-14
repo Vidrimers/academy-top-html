@@ -1,0 +1,17 @@
+@import 'fonts';
+@import 'vendor/normalize';
+@import 'main';
+@import 'libs/swiper';
+@import 'vendor/flex';
+@import 'blocks/header';
+@import 'blocks/clients';
+@import 'blocks/latest';
+@import 'blocks/products';
+@import 'blocks/footer';
+@import 'media';
+
+
+
+header,main,.latest,.clients,.products, footer {
+  // display: none;
+}

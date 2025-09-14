@@ -1,0 +1,73 @@
+/* MAIN */
+
+.container,
+body {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  font-weight: 400;
+  font-family: 'Open Sans', Arial, sans-serif;
+  // background-color: #f9fdff;
+  background-color: #fafdff;
+  margin: 0;
+}
+
+/* сброс браузерных стилей */
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  max-width: 1220px;
+  min-width: 320px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+.line {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 100%;
+  &:after {
+    content: '';
+    display: block;
+    width: 90px;
+    border-bottom: 4px solid rgba(48, 48, 50, 1);
+    margin-top: 12px;
+  }
+}
+
+.title {
+  color: #303032;
+  font-family: 'Playfair Display', Georgia, serif;
+  text-transform: uppercase;
+}
+
+.main-title {
+  font-size: 57px;
+  font-weight: 700;
+  line-height: 76px;
+}
+/* MAIN */

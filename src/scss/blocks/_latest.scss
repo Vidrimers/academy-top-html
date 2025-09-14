@@ -1,0 +1,61 @@
+/* LATEST */
+
+.latest {
+  padding: 140px 0 50px;
+  &-title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 100%;
+    margin: auto 0; /* с этим грид не разъежается */
+  }
+  &-items {
+    max-width: 50%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 30px;
+  }
+  &-item {
+    width: 270px;
+    height: 289px;
+
+    & p {
+      width: 100%;
+      overflow-wrap: break-word;
+      margin: auto 0 0;
+    }
+    & img {
+      max-height: 200px;
+    }
+    & span {
+      overflow-wrap: break-word;
+    }
+  }
+  &-name {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: 7px;
+  }
+  &-price {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 100%;
+  }
+  &-big {
+    width: 570px;
+    & p {
+      margin: auto 0 0;
+    }
+  }
+  &-link {
+    transition: all 0.3s;
+    color: inherit;
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.03);
+    padding: 16px 0;
+    &:hover {
+      background-color: #fceae8;
+    }
+  }
+}
+
+/* LATEST */
