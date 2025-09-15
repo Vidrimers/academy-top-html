@@ -68,7 +68,7 @@
   .products .swiper-pagination {
     top: auto;
     bottom: -6px;
-    right: 0;
+    right: -15px;
     left: auto;
     width: auto;
     height: auto;
@@ -153,6 +153,13 @@
       flex-direction: column;
       margin-bottom: 40px;
       gap: 20px;
+    }
+  }
+}
+@media (max-width: 369px) {
+  .products {
+    &-item {
+      width: 100%;
     }
   }
 }

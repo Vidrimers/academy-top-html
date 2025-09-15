@@ -7,6 +7,7 @@ console.log('SLIDER-PRODUCTS.JS РАБОТАЕТ')
 function productsSlider() {
   let mySwiper = ''
   const breakpoint319 = window.matchMedia('(max-width: 319px)')
+  const breakpoint369 = window.matchMedia('(max-width: 369px)')
   const breakpoint479 = window.matchMedia('(max-width: 479px)')
   const breakpoint767 = window.matchMedia('(max-width: 767px)')
   const breakpoint991 = window.matchMedia('(max-width: 991px)')
@@ -18,6 +19,31 @@ function productsSlider() {
         slidesPerGroup: 1,
         slidesPerView: 1,
         spaceBetween: 16,
+        modules: [Pagination, Scrollbar, Autoplay],
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: true,
+        },
+        pagination: {
+          el: '.products__slider-pagination',
+          type: 'fraction',
+        },
+        scrollbar: {
+          el: '.products__slider-scrollbar',
+          draggable: true,
+        },
+        navigation: {
+          nextEl: '.products__slider-button-next',
+          prevEl: '.products__slider-button-prev',
+        },
+      })
+    } else if (breakpoint369.matches) {
+      if (mySwiper) mySwiper.destroy(true, true)
+      mySwiper = new Swiper('.products__slider', {
+        slidesPerGroup: 1,
+        slidesPerView: 1,
+        spaceBetween: 30,
         modules: [Pagination, Scrollbar, Autoplay],
         loop: true,
         autoplay: {
@@ -118,6 +144,7 @@ function productsSlider() {
   }
 
   breakpoint319.addEventListener('change', breakpointChecker)
+  breakpoint369.addEventListener('change', breakpointChecker)
   breakpoint479.addEventListener('change', breakpointChecker)
   breakpoint767.addEventListener('change', breakpointChecker)
   breakpoint991.addEventListener('change', breakpointChecker)
